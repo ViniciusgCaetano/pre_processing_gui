@@ -32,12 +32,12 @@ def Sidebar():
                     
                     
                 """,unsafe_allow_html=True)
-    st.sidebar.image("https://i.ibb.co/H4mkh3S/almoxarivix-logo.png", width=300) 
+    st.sidebar.image("https://i.ibb.co/C2Lxzgd/logo-preprocessing.png") 
 
-    st.sidebar.file_uploader('Insert a .XLSX file here')   
+    file = st.sidebar.file_uploader('Insert a .XLSX file here')   
     
     st.sidebar.text_area('Applied Changes')
     col1, col2 = st.sidebar.columns(2)
     col1.download_button('Save File', data='fdfd')
     col2.button('Undo last change')
-    
+    return file
