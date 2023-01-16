@@ -1,40 +1,10 @@
 import streamlit as st
 
-def Sidebar(my_file):
+def sidebar(my_file):
 
-    st.markdown("""
-                    <style>
-                        .css-16u8z0w{
-                            width: 100%
-                        }
-                        
-                        .css-2ykyy6 {
-                            display: none;
-                        }
-                        
-                        .css-hxt7ib{
-                            padding-top: 2rem;
-                        }
-                        
-                        
-                      .css-z09lfk{
-                            width: 100%;
-                        }
-                       .css-5uatcg{
-                         width: 100% !important;
-                       }
+    st.sidebar.image("https://i.ibb.co/C2Lxzgd/logo-preprocessing.png")
 
-                      .css-629wbf {
-                        width: 100%;
-                       }
-                       
-                    </style>
-                    
-                    
-                """,unsafe_allow_html=True)
-    st.sidebar.image("https://i.ibb.co/C2Lxzgd/logo-preprocessing.png") 
-
-    file = st.sidebar.file_uploader('Insert a .XLSX file here')   
+    file = st.sidebar.file_uploader('Insert a .XLSX file here')
     if file:
         my_file.read_excel(file)
 

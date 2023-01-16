@@ -1,7 +1,9 @@
 import pandas as pd
 
 class File:
-
+    """
+    Class used to manage the data and transformations
+    """
     is_full = None
     file = None
     undo_step_file = None

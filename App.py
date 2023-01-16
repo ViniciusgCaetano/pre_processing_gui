@@ -27,6 +27,9 @@ st.markdown("""
                          width: 100% !important;
                        }
                        
+                        .css-629wbf {
+                        width: 100%;
+                       }
                     </style>
                     
                     
@@ -34,8 +37,8 @@ st.markdown("""
 
 col1, col2 = st.columns([4, 1])
 my_file = File()
-Sidebar.Sidebar(my_file)
+Sidebar.sidebar(my_file)
 with col1:
-    DataFrameDisplayer.DataFrameDisplayer(my_file)
+    DataFrameDisplayer.dataframe_displayer(my_file)
 with col2:
-    DataFrameTools.DataFrameTools(my_file)
+    DataFrameTools.dataframe_tools(my_file)

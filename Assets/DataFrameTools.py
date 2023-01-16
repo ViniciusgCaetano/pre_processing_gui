@@ -1,6 +1,6 @@
 import streamlit as st
 
-def DataFrameTools(my_file):
+def dataframe_tools(my_file):
     if not my_file.is_full:
         return False
 
