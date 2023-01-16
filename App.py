@@ -1,6 +1,6 @@
 import streamlit as st
 from Assets import Sidebar, DataFrameDisplayer, DataFrameTools
-from File import File
+from file import File
 
 st.set_page_config(page_title="Vini's Pre-Processing Tool", page_icon='random', layout="wide")
 st.markdown("""
@@ -39,4 +39,3 @@ with col1:
     DataFrameDisplayer.DataFrameDisplayer(my_file)
 with col2:
     DataFrameTools.DataFrameTools(my_file)
-

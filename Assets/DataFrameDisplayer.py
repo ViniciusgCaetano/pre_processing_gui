@@ -1,7 +1,5 @@
 import streamlit as st
-import pandas as pd
 import streamlit_nested_layout
-import openpyxl
 
 def DataFrameDisplayer(my_file):
 
@@ -18,5 +16,5 @@ def DataFrameDisplayer(my_file):
         col1, col2, col3 = st.columns(3)
         col1.subheader(f'Rows: {df.shape[0]}')
         col2.subheader(f'Columns: {df.shape[1]}')
-        col3.subheader(f'Empty rows: 0')
+        col3.subheader('Empty rows: 0')
     
