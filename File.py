@@ -7,6 +7,10 @@ class File:
     is_full = None
     file = None
     undo_step_file = None
+    def __new__(cls):
+        if not hasattr(cls, 'instance'):
+            cls.instance = super(File, cls).__new__(cls)
+        return cls.instance
 
 
     def read_excel(self, file):

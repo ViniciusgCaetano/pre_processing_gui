@@ -10,6 +10,7 @@ def dataframe_tools(my_file):
 
     if st.button('Delete Column'):
         my_file.delete_column(column_name)
+        st.experimental_rerun()
 
     st.subheader('Text Functions')
     st.button('Capitalize')
