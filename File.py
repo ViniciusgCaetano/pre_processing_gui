@@ -6,7 +6,8 @@ class File:
     """
     is_full = None
     file = None
-    undo_step_file = None
+    previous_step_file = None
+
     def __new__(cls):
         if not hasattr(cls, 'instance'):
             cls.instance = super(File, cls).__new__(cls)
@@ -22,5 +23,10 @@ class File:
         return self.file
 
     def delete_column(self, column_name):
-        self.undo_step_file = self.file
+        self.previous_step_file = self.file
         self.file = self.file.drop(columns=column_name)
+    
+    def undo(self):
+        if isinstance(self.previous_step_file, pd.DataFrame):
+            self.file = self.previous_step_file
+        
