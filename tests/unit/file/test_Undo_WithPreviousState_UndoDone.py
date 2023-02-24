@@ -1,4 +1,4 @@
-from file import File
+from File import File
 
 def test_undo_WithPreviousState_UndoDone():
     test_file = File()

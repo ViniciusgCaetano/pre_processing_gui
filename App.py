@@ -1,5 +1,5 @@
 import streamlit as st
-from file import File
+from File import File
 from Assets import Sidebar, DataFrameDisplayer, DataFrameTools
 
 st.set_page_config(page_title="Vini's Pre-Processing Tool", page_icon='random', layout="wide")

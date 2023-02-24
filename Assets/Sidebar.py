@@ -1,4 +1,5 @@
 import streamlit as st
+from File import File
 
 def sidebar(my_file):
 
@@ -11,4 +12,7 @@ def sidebar(my_file):
     st.sidebar.text_area('Applied Changes')
     col1, col2 = st.sidebar.columns(2)
     col1.download_button('Save File', data='fdfd')
-    col2.button('Undo last change')
+    if col2.button('Undo last change'):
+        file = File()
+        file.undo()
+        st.experimental_rerun()
