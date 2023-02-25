@@ -13,7 +13,6 @@ class File:
             cls.instance = super(File, cls).__new__(cls)
         return cls.instance
 
-
     def read_excel(self, file):
         if not self.is_full:
             self.is_full = True
@@ -29,4 +28,16 @@ class File:
     def undo(self):
         if isinstance(self.previous_step_file, pd.DataFrame):
             self.file = self.previous_step_file
-        
+
+    def apply_lowercase(self, column_name: str):
+        if self.file.dtypes[column_name] != pd.StringDtype:
+            return
+        self.file[column_name] = self.file[column_name].str.lower()
+
+
+    def apply_uppercase(self, column_name: str):
+        if self.file.dtypes[column_name] != pd.StringDtype:
+            return
+        self.file[column_name] = self.file[column_name].str.upper()
+            
+            

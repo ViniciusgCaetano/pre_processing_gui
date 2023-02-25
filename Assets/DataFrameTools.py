@@ -14,7 +14,10 @@ def dataframe_tools(my_file):
 
     st.subheader('Text Functions')
     st.button('Capitalize')
-    st.button('Lowercase')
+    if st.button('Lowercase'):
+        my_file.apply_lowercase(column_name)
+        st.experimental_rerun()
+
     st.button('Uppercase')
 
     st.subheader('Filter Functions')
