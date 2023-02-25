@@ -1,6 +1,6 @@
 from File import File
 
-def test_Undo_WithoutPreviousState_UndoDone():
+def test_Undo_WithoutPreviousState_MakesNothing():
     test_file = File()
     test_file.read_excel('tests\dummy_sheet.xlsx')
     initial_state = test_file.get_file()
